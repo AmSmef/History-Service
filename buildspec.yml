@@ -35,6 +35,10 @@ phases:
       # Deploy the Lambda function using the AWS CLI
       - aws lambda update-function-code --function-name DisplayWatchHistoryLambda --zip-file fileb://build/DisplayHistoryService.zip
 
+      - echo syncing frontend files to to S3...
+
+      - aws s3 sync ./history/ s3://devops-bucket-amsmef/frontend/history/
+
 artifacts:
   files:
     - build/AddHistoryService.zip
