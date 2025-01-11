@@ -15,7 +15,7 @@ phases:
       # Remove any previous files in build directory and copy only the necessary ones
       - rm -rf build/*
       # Copy index.js from src/ to the root directory
-      - cp src/AddHistory.js  # Copy the index.js to the root directory
+      - cp src/AddHistory.js . # Copy the index.js to the root directory
       # Include node_modules in the zip package along with other files
       - zip -r build/AddHistoryService.zip AddHistory.js package.json package-lock.json node_modules/*  # Include node_modules contents
       # Optionally, you can also include other files if needed
@@ -27,7 +27,7 @@ phases:
 
       - rm -rf build/*
 
-      - cp src/DisplayHistory.js
+      - cp src/DisplayHistory.js .
 
       - zip -r build/DisplayHistoryService.zip DisplayHistory.js package.json package-lock.json node_modules/* 
 
